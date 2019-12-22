@@ -7,7 +7,7 @@ import java.util.HashMap;
  *
  * @author RusTe
  */
-public class Core implements Runnable {
+public class Core {
 
     private UICore uiCore;
     private GoogleData ggData;
@@ -49,7 +49,6 @@ public class Core implements Runnable {
         return ppCollector;
     }
 
-    @Override
     public void run() {
         initComponents();
 
