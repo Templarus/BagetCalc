@@ -13,17 +13,19 @@ public class Core {
     private GoogleData ggData;
     private PropertyCollector ppCollector;
     private HashMap<String, Thread> threadPool;
+    private PropertyCollector properties;
 
-    public static void main(String[] Args) {
-        Core thisCore = new Core();
-        thisCore.run();
+    public static void main(String[] args) {
+        //  Core thisCore = new Core();
+        //  thisCore.run();
 
     }
 
     private void initComponents() {
+        properties = new PropertyCollector();
         threadPool = new HashMap<>();
         ppCollector = new PropertyCollector();
-        uiCore = new UICore();
+        uiCore = new UICore(this);
         threadPool.put("UICore", threadRunner("UICore", uiCore));
         ggData = new GoogleData();
         threadPool.put("GoogleData", threadRunner("GoogleData", ggData));
