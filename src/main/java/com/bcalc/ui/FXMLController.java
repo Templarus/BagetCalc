@@ -1,4 +1,4 @@
-package com.bcalc.main;
+package com.bcalc.ui;
 
 import java.net.URL;
 import java.util.ResourceBundle;

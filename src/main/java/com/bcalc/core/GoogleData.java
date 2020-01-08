@@ -5,7 +5,7 @@
  */
 package com.bcalc.core;
 
-import com.bcalc.main.SheetsQuickstart;
+import com.bcalc.ui.SheetsQuickstart;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -24,7 +24,6 @@ import java.security.GeneralSecurityException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.bcalc.core.Core;
 
 /**
  *
@@ -38,7 +37,7 @@ public class GoogleData implements Runnable {
             NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
             String spreadsheetId = "1Q9o_sOPzSuE82CtxvOqxi240nuBFFvFxv_WXvwz_Xj0";
             String range = "Class Data!A:I";
-            Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+            Sheets service = new Sheets.Builder(HTTP_TRANSPORT, Core.ppCollector.get, getCredentials(HTTP_TRANSPORT))
                     .setApplicationName(APPLICATION_NAME)
                     .build();
             ValueRange response = service.spreadsheets().values()

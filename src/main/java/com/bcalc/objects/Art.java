@@ -9,34 +9,16 @@ package com.bcalc.objects;
  *
  * @author RusTe
  */
-public class Art {
+public class Art extends BaseObject {
 
-    private String id;
-    private String type;
     private int width;
     private int basePrice;
 
-    public Art(String id, String type, int width, int basePrice) {
-        this.id = id;
-        this.type = type;
+    public Art(String objectID, String objectType, int width, int basePrice) {
+        this.objectID = objectID;
+        this.objectType = objectType;
         this.width = width;
         this.basePrice = basePrice;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public int getWidth() {

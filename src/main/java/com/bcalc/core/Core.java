@@ -2,6 +2,8 @@ package com.bcalc.core;
 
 import com.bcalc.Utils.PropertyCollector;
 import java.util.HashMap;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -9,11 +11,12 @@ import java.util.HashMap;
  */
 public class Core {
 
-    private UICore uiCore;
-    private GoogleData ggData;
-    private PropertyCollector ppCollector;
-    private HashMap<String, Thread> threadPool;
-    private PropertyCollector properties;
+    private static UICore uiCore;
+    private static GoogleData ggData;
+    public static PropertyCollector ppCollector;
+    private static HashMap<String, Thread> threadPool;
+    public static Logger loggerConsole;
+    public static DataContainer data;
 
     public static void main(String[] args) {
         //  Core thisCore = new Core();
@@ -22,13 +25,24 @@ public class Core {
     }
 
     private void initComponents() {
-        properties = new PropertyCollector();
+        initLoggers();
         threadPool = new HashMap<>();
+
         ppCollector = new PropertyCollector();
+        startSequence();
+    }
+
+    private void startSequence() {
         uiCore = new UICore(this);
         threadPool.put("UICore", threadRunner("UICore", uiCore));
-        ggData = new GoogleData();
-        threadPool.put("GoogleData", threadRunner("GoogleData", ggData));
+        data = new DataContainer();
+        threadPool.put("data", threadRunner("DataContainer", data));
+    }
+
+    private void initLoggers() {
+
+        loggerConsole = LogManager.getLogger("Console");
+        loggerConsole.info("CoreObjects.Core.initLog4j()  loggerConsole " + loggerConsole.getLevel().toString());
 
     }
 

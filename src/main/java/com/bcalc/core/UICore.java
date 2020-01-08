@@ -3,6 +3,7 @@ package com.bcalc.core;
 import static com.bcalc.core.Core.loggerConsole;
 
 import com.bcalc.core.QueueManager;
+import com.bcalc.ui.MainApp;
 import javax.swing.SwingUtilities;
 
 /**
@@ -11,11 +12,9 @@ import javax.swing.SwingUtilities;
 public class UICore implements Runnable {
 
     static String loggedUser;
-    public static boolean monStarted;
     static boolean loginAccepted;
-    static boolean UIAnabled = true;
-
-    Core core;
+    private MainApp mainApp;
+    private Core core;
     static int currentProcc = 0;
 
     // содержит тайминги последнего пакета для каждого устройства
@@ -24,64 +23,21 @@ public class UICore implements Runnable {
         this.core = core;
 
         initObject();
-        break;
 
-    
-
-    default:
-                loggerConsole.fatal("Incorrect launchType! " + Core.properties.getLAUNCH_TYPE());
-                loggerDB.fatal("Incorrect launchType! " + Core.properties.getLAUNCH_TYPE());
-                System.exit(0);
-                break;
-        
-
-    }
-
-    private void nonUILaunch() {
-        Core.initDBCOnnection();
-        if (Core.getSdb().isReady) {
-            loggerConsole.info("Login accepted!");
-            if (core.msadLoginCheck(Core.properties.getLDAPUSER(), Core.properties.getLDAPPASS().toCharArray())) {
-                loggerConsole.info("MSAD check passed ");
-                if (core.dbLoginCheck(Core.properties.getLDAPUSER())) {
-                    loggerConsole.info("DB request check passed ");
-                    setLoggedUser(Core.properties.getLDAPUSER());
-                    loginAccepted = true;
-                    Core.initCores();
-                    Core.initPGCOnnection();
-                } else {
-                    loggerConsole.fatal("У пользователя " + Core.properties.getLDAPUSER() + " нет разрешения доступа в СУБД");
-                    loggerDB.fatal("У пользователя " + Core.properties.getLDAPUSER() + " нет разрешения доступа в СУБД");
-                }
-
-            } else {
-                loggerDB.warn(MONMARKER, "LoginForm, Неверный логин или пароль");
-            }
-        }
-        if (loginAccepted) {
-
-            if (!monStarted) {
-                monStarted = true;
-                QueueManager queue = new QueueManager(this);
-                Thread t = new Thread(queue);
-                t.start();
-            } else {
-                loggerDB.warn(MONMARKER, "UI.UICore.nonUILaunch() SELECT DA BUTTON");
-            }
-        }
+        //System.exit(0);
+        //break;
     }
 
     private void initObject() {
-        loginForm = new LoginForm(this);
-        loginForm.setBounds(300, 400, loginForm.getPreferredSize().width, loginForm.getPreferredSize().height);
-        loginForm.setVisible(true);
+        mainApp = new MainApp(this);
+        // loginForm.setBounds(300, 400, loginForm.getPreferredSize().width, loginForm.getPreferredSize().height);
+        // mainApp.setVisible(true);
     }
 
     public static void resetProgress() {
         currentProcc = 0;
-        if (UIAnabled) {
-            loginForm.jProgressBar1.setString("reset");
-        }
+
+        // loginForm.jProgressBar1.setString("reset");
     }
 
     public static void setProgress(int key, String text) {
@@ -91,16 +47,15 @@ public class UICore implements Runnable {
         } else {
             currentProcc = key;
         }
-        if (UIAnabled) {
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
 
-                    loginForm.jProgressBar1.setString("Stage " + text + "...  " + currentProcc + "%");
-                    loginForm.jProgressBar1.setValue(currentProcc);
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
 
-                }
-            });
-        }
+//                loginForm.jProgressBar1.setString("Stage " + text + "...  " + currentProcc + "%");
+                //              loginForm.jProgressBar1.setValue(currentProcc);
+            }
+        });
+
     }
 
     @Override
