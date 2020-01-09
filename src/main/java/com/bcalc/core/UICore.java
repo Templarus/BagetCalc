@@ -2,7 +2,6 @@ package com.bcalc.core;
 
 import static com.bcalc.core.Core.loggerConsole;
 
-import com.bcalc.core.QueueManager;
 import com.bcalc.ui.MainApp;
 import javax.swing.SwingUtilities;
 

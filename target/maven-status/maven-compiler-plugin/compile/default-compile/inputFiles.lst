@@ -1,3 +1,13 @@
-D:\javaProjects\BagetCalc\src\main\java\com\bcalc\main\MainApp.java
-D:\javaProjects\BagetCalc\src\main\java\com\bcalc\main\SheetsQuickstart.java
-D:\javaProjects\BagetCalc\src\main\java\com\bcalc\main\FXMLController.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\core\Core.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\ui\MainApp.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\Utils\Cypher.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\core\DataContainer.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\core\UICore.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\objects\BaseObject.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\objects\Mirror.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\ui\FXMLController.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\Utils\ServerDB.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\Utils\PropertyCollector.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\core\GoogleData.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\Utils\Log4jDBConnector.java
+D:\javaProjects\BagetCalc\src\main\java\com\bcalc\objects\Art.java

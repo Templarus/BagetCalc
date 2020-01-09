@@ -1,1 +1,4 @@
-com.bcalc.main
+com.bcalc.Utils
+com.bcalc.core
+com.bcalc.objects
+com.bcalc.ui

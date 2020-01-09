@@ -19,8 +19,8 @@ public class Core {
     public static DataContainer data;
 
     public static void main(String[] args) {
-        //  Core thisCore = new Core();
-        //  thisCore.run();
+          Core thisCore = new Core();
+          thisCore.run();
 
     }
 
