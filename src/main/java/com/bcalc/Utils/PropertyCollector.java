@@ -32,25 +32,7 @@ public class PropertyCollector {
     private String DummyData;
 
     public PropertyCollector() {
-        collectData();
-    }
-
-    private void collectData() {
-        Properties initconfig = new Properties();
-
-        try {
-            String configFile;
-            initconfig.load(this.getClass().getResourceAsStream("/start.properties"));
-            loaded = readConfig(new FileInputStream(initconfig.getProperty("config.location")));
-            if (!loaded) {
-                loggerConsole.warn("Гружу дефолт");
-                loaded = readConfig(this.getClass().getResourceAsStream(initconfig.getProperty("config.deflocation")));
-            }
-        } catch (IOException e) {
-            loaded = false;
-            loggerConsole.error("ОШИБКА: проблемы при чтении файлов конфигурации!" + e.getMessage());
-        }
-
+        readConfig(this.getClass().getResourceAsStream("/basicConf.properties"));
     }
 
     private boolean readConfig(InputStream fileloc) {

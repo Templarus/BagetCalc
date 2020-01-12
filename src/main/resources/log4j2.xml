@@ -5,24 +5,9 @@
             <PatternLayout
                 pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
         </Console>
-        <JDBC name="PostgreSQL" tableName="APP_LOGS">
-            <ConnectionFactory
-                class="com.gpn.hypmon.DB.Log4jDBConnector" method="openConnectionToDB" />
-            <Column name="LOG_ID" pattern="%u" isUnicode="false" />
-            <Column name="ENTRY_DATE" isEventTimestamp="true" isUnicode="false"/>
-            <Column name="LOGGER" pattern="%logger" isUnicode="false"/>
-            <Column name="MONID" pattern="%marker" isUnicode="false"/>
-            <Column name="LOG_LEVEL" pattern="%level" isUnicode="false"/>
-            <Column name="MESSAGE" pattern="%m" isUnicode="false"/>
-            <Column name="EXCEPTION" pattern="%m" isUnicode="false"/>
-        </JDBC>
     </Appenders>
 
     <Loggers>
-        <Logger name="DBStorage" level="warn"
-                additivity="false">
-            <AppenderRef ref="PostgreSQL" />
-        </Logger>
         
         <Root level="INFO" additivity="false">
             <AppenderRef ref="console" />

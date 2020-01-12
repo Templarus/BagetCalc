@@ -34,6 +34,7 @@ public class DataContainer implements Runnable {
     public DataContainer() {
         arts = new HashMap<>();
         mirrors = new HashMap<>();
+        readJsonData();
     }
 
     private void readJsonData() {
@@ -54,7 +55,7 @@ public class DataContainer implements Runnable {
     private void constructData() {
         JSONArray jArts = jsonObject.getJSONArray("arts");
         JSONArray jmirrors = jsonObject.getJSONArray("mirrors");
-        
+
     }
 
     private void readGoogleData() {
