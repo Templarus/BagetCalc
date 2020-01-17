@@ -16,6 +16,7 @@ public abstract class BaseObject {
     String name = "";        //имя объекта
     String objectID = "";    //objectID
     String objectType = ""; //objectType
+    String groupId = "";
 
     /**
      * локальный метод, возвращает тип объекта

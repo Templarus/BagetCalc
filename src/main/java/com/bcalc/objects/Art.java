@@ -14,7 +14,8 @@ public class Art extends BaseObject {
     private int width;
     private int basePrice;
 
-    public Art(String objectID, String objectType, int width, int basePrice) {
+    public Art(String name, String objectType, String objectID, int width, int basePrice) {
+        this.name = name;
         this.objectID = objectID;
         this.objectType = objectType;
         this.width = width;

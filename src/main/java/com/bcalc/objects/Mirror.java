@@ -11,22 +11,13 @@ package com.bcalc.objects;
  */
 public class Mirror extends BaseObject {
 
-    private int width;
     private int basePrice;
 
-    public Mirror(String objectID, String objectType, int width, int basePrice) {
+    public Mirror(String objectID, String name, String objectType, int basePrice) {
+        this.name = name;
         this.objectID = objectID;
         this.objectType = objectType;
-        this.width = width;
         this.basePrice = basePrice;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
     }
 
     public int getBasePrice() {
