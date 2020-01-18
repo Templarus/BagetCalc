@@ -14,9 +14,9 @@ import java.util.HashSet;
 public abstract class BaseObject {
 
     String name = "";        //имя объекта
-    String objectID = "";    //objectID
+    int objectID = 0;    //objectID
     String objectType = ""; //objectType
-    String groupId = "";
+    int groupId = 0;
 
     /**
      * локальный метод, возвращает тип объекта
@@ -105,7 +105,7 @@ public abstract class BaseObject {
      *
      * @return
      */
-    public String getObjectId() {
+    public int getObjectId() {
         return objectID;
     }
 

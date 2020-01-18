@@ -14,12 +14,13 @@ public class Art extends BaseObject {
     private int width;
     private int basePrice;
 
-    public Art(String name, String objectType, String objectID, int width, int basePrice) {
+    public Art(String name, String objectType, int objectID, int width, int basePrice, int groupId) {
         this.name = name;
         this.objectID = objectID;
         this.objectType = objectType;
         this.width = width;
         this.basePrice = basePrice;
+        this.groupId = groupId;
     }
 
     public int getWidth() {

@@ -13,11 +13,20 @@ public class Mirror extends BaseObject {
 
     private int basePrice;
 
-    public Mirror(String objectID, String name, String objectType, int basePrice) {
+    /**
+     *
+     * @param objectID
+     * @param name
+     * @param objectType
+     * @param basePrice
+     * @param groupId
+     */
+    public Mirror(int objectID, String name, String objectType, int basePrice, int groupId) {
         this.name = name;
         this.objectID = objectID;
         this.objectType = objectType;
         this.basePrice = basePrice;
+        this.groupId = groupId;
     }
 
     public int getBasePrice() {
