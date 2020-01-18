@@ -5,10 +5,86 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bcalc.main.FXMLController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="613.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.bcalc.main.FXMLController">
+  <children>
+    <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
+    <Label layoutX="273.0" layoutY="32.0" text="РАСЧЁТ СТОИМОСТИ">
+      <font>
+        <Font name="Bank Gothic BT Medium" size="36.0" />
+      </font>
+    </Label>
+    <Label layoutX="29.0" layoutY="76.0" text="Укажите размеры">
+      <font>
+        <Font name="Bank Gothic BT Medium" size="18.0" />
+      </font>
+    </Label>
+    <GridPane blendMode="MULTIPLY" layoutX="29.0" layoutY="136.0" prefHeight="100.0" prefWidth="270.0">
+      <children>
+        <Label text="Ширина" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label text="Высота" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Габаритный размер, см" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="Внутренний размер, см" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <MenuBar layoutX="0.0" layoutY="0.0" prefWidth="1024.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Delete" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <GridPane layoutX="323.0" layoutY="114.0">
+      <children>
+        <RadioButton alignment="CENTER_RIGHT" contentDisplay="LEFT" mnemonicParsing="false" selected="false" text="РР-1" textOverrun="ELLIPSIS" underline="false" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+        <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
 </AnchorPane>

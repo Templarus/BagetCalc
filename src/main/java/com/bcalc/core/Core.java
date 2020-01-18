@@ -19,8 +19,8 @@ public class Core {
     public static DataContainer data;
 
     public static void main(String[] args) {
-          Core thisCore = new Core();
-          thisCore.run();
+        Core thisCore = new Core();
+        thisCore.run();
 
     }
 
@@ -33,10 +33,11 @@ public class Core {
     }
 
     private void startSequence() {
-        uiCore = new UICore(this);
-        threadPool.put("UICore", threadRunner("UICore", uiCore));
+
         data = new DataContainer();
         threadPool.put("data", threadRunner("DataContainer", data));
+        uiCore = new UICore(this);
+        threadPool.put("UICore", threadRunner("UICore", uiCore));
     }
 
     private void initLoggers() {

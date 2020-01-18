@@ -22,7 +22,7 @@ import org.json.*;
 public class DataContainer implements Runnable {
 
     private HashMap<String, Art> arts;
-    private HashMap<String, Art> mirrors;
+    private HashMap<String, Mirror> mirrors;
     private JSONObject jsonObject;
 
     public DataContainer() {
@@ -57,7 +57,7 @@ public class DataContainer implements Runnable {
             int width = rec.getInt("width");
             int basePrice = rec.getInt("basePrice");
             int groupid = rec.getInt("groupid");
-            Art artEx = new Art(name, "articul", id, width, basePrice);
+            arts.put(name, new Art(name, "articul", id, width, basePrice));
         }
 
         JSONArray jMirrors = jsonObject.getJSONArray("mirrors");
@@ -67,7 +67,7 @@ public class DataContainer implements Runnable {
             String name = rec.getString("name");
             int basePrice = rec.getInt("priceRect");
             int groupid = rec.getInt("groupid");
-            Mirror mirrEx = new Mirror(name, "mirror", id, basePrice);
+            mirrors.put(name, new Mirror(name, "mirror", id, basePrice));
         }
 //JSONArray data = incomingJson.getJSONObject("soapenv:Body").getJSONObject("jsonObject").getJSONArray("data");
     }
